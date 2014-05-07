@@ -1,5 +1,9 @@
 # Reposted.me
 
+## Raison d'être
+
+Reposted.me is a simple clone of [Favstar](http://favstar.fm/). It's designed to do one thing well: to display your posts on App.net that have been starred or reposted by others.
+
 ## Current state
 
 The initial code released to Github is the full production version of Reposted.me, but with a few modifications. These modifications will be pushed to production shortly, and production will track open source.
