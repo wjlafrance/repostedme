@@ -4,6 +4,10 @@
 
 Reposted.me is a simple clone of [Favstar](http://favstar.fm/). It's designed to do one thing well: to display your posts on App.net that have been starred or reposted by others.
 
+## License
+
+Reposted.me is licensed under the [Creative Commons Attribution Non-Commercial Share-Alike 4.0 License](https://creativecommons.org/licenses/by-nc-sa/4.0/) (CC BY NC SA). Please see `LICENSE.TXT` for the full legal text.
+
 ## Current state
 
 The initial code released to Github is the full production version of Reposted.me, but with a few modifications. These modifications will be pushed to production shortly, and production will track open source.
