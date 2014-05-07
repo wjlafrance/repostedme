@@ -1,0 +1,56 @@
+<div class="box" style="text-align:center">
+  <h1>Frequently Asked Questions</h2>
+</div>
+
+<div class="box">
+  <p>
+    <b>Disclaimer</b>
+  </p>
+  <p>
+    Reposted.me is now open source. While the information in this FAQ is true for the instance running at https://reposted.me it may not be true for the site you are currently browsing.
+  </p>
+</div>
+
+<div class="box">
+  <p>
+    <b>What technologies does Reposted.me use?</b>
+  </p>
+  <p>
+    Reposted.me is written using <a href="http://rubyonrails.org">Ruby on Rails 3</a> and hosted on <a href="https://www.apple.com/osx/server/">OS X Server</a> using Apache httpd and <a href="https://www.phusionpassenger.com/">Phusion Passenger</a>. The SSL certificates were obtained for free from <a href="https://www.startssl.com/">StartSSL</a>.<br />
+  </p>
+</div>
+
+<div class="box">
+  <p>
+    <b>How do you monetize Reposted.me?</b>
+  </p>
+  <p>
+    You're probably asking me this question because you wonder why I'm doing this apparently for free. I've built Reposted.me as a service to the community in my free time, and to sharpen my Rails skills. It's currently being hosted on a Mac mini in my living room, which I'm already using to host some other services. I did monetize directly through the <a href="https://account.app.net/legal/incentive-terms/">App.net Developer Incentive Program</a> until that program was ended.
+  </p>
+  <p>
+    If you'd like to make a donation, feel free to PM me on App.net. My handle there is <a href="http://alpha.app.net/wjl">@wjl</a>.
+  </p>
+</div>
+
+<% if false %>
+<div class="box">
+  <p>
+    <b>Why does the site load slowly sometimes?</b> <!-- https://github.com/appdotnet/api-spec/issues/290 -->
+  </p>
+  <p>
+    I want to provide the most data possible, but due to limitations on App.net's API, I can only request 200 posts per API call. Filtering isn't available yet on the API that I use, so until that is launched I need to make X/200 API calls, where X is the number of posts you have. Since I need the last post ID from each group of 200 posts, these API calls need to be synchronous, so loading time scales with number of posts.
+  </p>
+  <p>
+    I want to provide the best experience I can, so I'm keeping an eye on API changes. Please contact me with any questions or suggestions!
+  </p>
+</div>
+<% end %>
+
+<div class="box">
+  <p>
+    <b>You didn't answer my question!</b>
+  </p>
+  <p>
+    Feel free to contact me on App.net or by email at <a href="mailto:info@reposted.me">info@reposted.me</a>.
+  </p>
+</div>

@@ -1,0 +1,29 @@
+// Place all the styles related to the reposts controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+#bestofbox {
+  text-align: center;
+}
+
+span[itemscope="https://app.net/schemas/Post"] a {
+  text-decoration: underline;
+  color: DimGray;
+}
+
+a {
+  color: #383838;
+  &:visited {
+    color: #383838;
+  }
+}
+
+.posttext {
+  font-size: 150%;
+}
+
+span[itemprop=mention], span[itemprop=hashtag] {
+  font-weight: 500;
+  color: DimGray;
+}

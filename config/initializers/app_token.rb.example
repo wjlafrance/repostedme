@@ -1,0 +1,7 @@
+CLIENT_ID = ""
+CLIENT_SECRET = ""
+
+json = RestClient.post "https://account.app.net/oauth/access_token",
+    client_id: CLIENT_ID, client_secret: CLIENT_SECRET, grant_type: "client_credentials"
+Repostedme::Application.const_set('ACCESS_TOKEN', ActiveSupport::JSON.decode(json)["access_token"])
+puts Repostedme::Application::ACCESS_TOKEN

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Reposted.me</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+
+    <%= javascript_tag do -%>
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-37972961-1']);
+      _gaq.push(['_trackPageview']);
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    <% end -%>
+
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="viewport" content="user-scalable=yes, initial-scale=.5" />
+  <link rel="apple-touch-icon" href="<%= asset_path "icon.png" %>" />
+  <link rel="apple-touch-icon" sizes="144x144" href="<%= asset_path "icon-retina.png" %>" />
+</head>
+<body>
+
+  <div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+      <span class="brand">Reposted.me</span>
+      <ul class="nav">
+        <% if current_user %>
+          <li><%= link_to "Hello, #{current_user.username}", "/u/#{current_user.username}" %></li>
+          <li><%= link_to "Log Out", logout_url %></li>
+        <% else %>
+          <li><%= link_to "Log In", login_url %></li>
+        <% end %>
+      </ul>
+      <form class="navbar-search pull-right" action="/search">
+        <input type="text" name="user" class="search-query" placeholder="Search" />
+      </form>
+    </div>
+  </div>
+
+<%= yield %>
+
+  <div class="navbar-fixed-bottom well footer">
+      Reposted.me is built by <a href="https://alpha.app.net/wjl">@wjl</a>. |
+      <%= link_to "Privacy Policy", privacy_url %> |
+      <%= link_to "Frequently Asked Questions", faq_url %> |
+      <%= link_to "Donate (Flattr)", "http://flattr.com/thing/1154398/Reposted-me" %>
+  </div>
+</body>
+</html>

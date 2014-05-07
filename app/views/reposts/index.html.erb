@@ -1,0 +1,64 @@
+
+<div class="row-fluid" style="text-align: center;">
+  <% if @user.nil? %>
+    <h3>That user does not exist.</h3>
+  <% else %>
+    <div class="span8 offset2 well">
+        <%== avatar_tag_for_user @user, "big" %>
+        <h1>Best of <%= @user["username"] %></h1>
+    </div>
+  <% end %>
+
+  <% flash.each do |key, message| %>
+    <h3><%= message %></h3>
+  <% end %>
+</div>
+
+<script type="text/html" id="post-template">
+  <div class="row-fluid">
+    <div class="well span8 offset2">
+      <div class="row-fluid">
+        <div class="span12">
+          <p>
+            <span data-bind="html: html" />
+          </p>
+          <br />
+          <p>
+            Posted <span data-bind="text: prettyTimestamp(created_at)" /> | <a target="_blank" data-bind="attr: { href: canonical_url }">Permalink</a>
+            <span data-bind="if: num_stars > 0">
+              <br />
+              <span>
+                Starred by <span data-bind="text: num_stars" />
+                <span data-bind="text: pluralize('people', num_stars)" />:
+                <span data-bind="html: linkUsers(starred_by)" />.
+              </span>
+            </span>
+            <span data-bind="if: num_reposts > 0">
+              <br />
+              <span>
+                Reposted by <span data-bind="text: num_reposts" />
+                <span data-bind="text: pluralize('people', num_reposts)" />:
+                <span data-bind="html: linkUsers(reposters)" />.
+              </span>
+            </span>
+          </p>
+          <div class="row-fluid avatar-row">
+            <span data-bind="html: avatarsForPost(starred_by, reposters)" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</script>
+
+<div id="post_container" data-bind="template { name: 'post-template', foreach: posts }" />
+
+<% unless @user.nil? %>
+  <div id="loading_indicator">
+    <h1 style="text-align: center">Loading...</h3>
+  </div>
+
+  <script type="text/javascript">
+    initLoading("<%= @user["username"] %>");
+  </script>
+<% end %>
