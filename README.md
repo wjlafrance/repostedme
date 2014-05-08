@@ -31,14 +31,14 @@ Primarily for the last reason, I had to strip all SCM history and start a new gi
 
 1. Database configuration
 
-    Configure your database for the various environments. To just run locally, the defaults for test are probably fine.
+    Configure your database for the various environments. To just run locally, the defaults for `development` and `test` are probably fine.
 
         $ cp config/database.yml.example config/database.yml
         $ vim config/database.yml
 
 1. App Token
 
-    Copy and configure the app token. You can sign up for an app token [here][developers.app.net]. You'll need an App.net developer account.
+    Copy and configure the app token. You can sign up for an app token [here](developers.app.net). You'll need an App.net developer account.
 
         $ cp config/initalizers/app_token.rb.example config/initializers/app_token.rb
         $ vim config/initializers/app_token.rb
