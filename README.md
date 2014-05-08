@@ -44,6 +44,7 @@ Primarily for the last reason, I had to strip all SCM history and start a new gi
         $ vim config/initializers/app_token.rb
 
 1. Bundle and run
+
         $ bundle install
         $ rails s
 
